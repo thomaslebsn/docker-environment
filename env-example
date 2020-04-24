@@ -7,25 +7,20 @@
 
 APPLICATION=/Users/thomasle/PhpstormProjects/
 
-### SSH KEYS #############################################################################################################
-DOCKER_SSH_KEYS_PATH=./sshkeys
-
 ### APACHE #############################################################################################################
 
 APACHE_HOST_HTTP_PORT=9898
 APACHE_HOST_HTTPS_PORT=993
 APACHE_HOST_LOG_PATH=./logs/apache2
 APACHE_SITES_PATH=./apache2/sites
+APACHE2_SSL_CERTS_PATH=./apache2/ssl-certs
 
 ### PHP #############################################################################################################
-PHP_70_APACHE2_PHP_INI_PATH=./php/7.0/apache2/php.ini
-PHP_71_APACHE2_PHP_INI_PATH=./php/7.1/apache2/php.ini
+PHP_74_APACHE2_PHP_INI_PATH=./php/7.4/apache2/php.ini
 
 ### Docker Host IP #####################################################################################################
 # Enter your Docker Host IP (will be appended to /etc/hosts). Default is `10.0.75.1`
-DOCKER_HOST_IP=10.0.75.1
 DOCKER_TEST_SHELLS_PATH=./workspace/shells
-
 
 ### WORKSPACE ##########################################################################################################
 WORKSPACE_SSH_PORT=2424
@@ -33,5 +28,14 @@ WORKSPACE_SSH_PORT=2424
 ### SOCKET.IO SERVER PORT ##########################################################################################################
 SOCKET_IO_SRV_PORT=6001
 
+### SOCKET.IO SERVER PORT ##########################################################################################################
+VUEJS_APP_SRV_PORT=5000
+
 ### SUPERVISOR ##########################################################################################################
 SUPERVISOR_AUTO_START_CONFIG_FILES_PATH=./supervisorconf/autostart
+
+### SSHKEYs ##########################################################################################################
+SSHKEYS_FILES_PATH=./sshkeys
+
+### XDEBUG TCP without TLS PORT ##########################################################################################################
+XDEBUG_SRV_PORT=2375

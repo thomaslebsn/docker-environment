@@ -12,8 +12,7 @@ services:
       - ${APACHE_HOST_LOG_PATH}:/var/log/apache2
       - ${APACHE_SITES_PATH}:/etc/apache2/sites-available
       - ${DOCKER_TEST_SHELLS_PATH}:/home/docker-shells
-      - ${PHP_70_APACHE2_PHP_INI_PATH}:/etc/php/7.0/apache2/php.ini
-      - ${PHP_71_APACHE2_PHP_INI_PATH}:/etc/php/7.1/apache2/php.ini
+      - ${PHP_74_APACHE2_PHP_INI_PATH}:/etc/php/7.4/apache2/php.ini
       - ${SSHKEYS_FILES_PATH}:/home/sshkeys
 #    extra_hosts:
     ports:

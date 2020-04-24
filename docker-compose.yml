@@ -1,0 +1,70 @@
+version: '2'
+
+services:
+### Workspace Utilities Container ###########################
+  workspace:
+    build:
+      context: ./workspace
+#        args:
+      dockerfile: "Dockerfile"
+    volumes:
+      - ${APPLICATION}:/var/www
+      - ${APACHE_HOST_LOG_PATH}:/var/log/apache2
+      - ${APACHE_SITES_PATH}:/etc/apache2/sites-available
+      - ${DOCKER_TEST_SHELLS_PATH}:/home/docker-shells
+      - ${PHP_70_APACHE2_PHP_INI_PATH}:/etc/php/7.0/apache2/php.ini
+      - ${PHP_71_APACHE2_PHP_INI_PATH}:/etc/php/7.1/apache2/php.ini
+      - ${SSHKEYS_FILES_PATH}:/home/sshkeys
+#    extra_hosts:
+    ports:
+      - "${WORKSPACE_SSH_PORT}:22"
+      - "${APACHE_HOST_HTTP_PORT}:80"
+      - "${APACHE_HOST_HTTPS_PORT}:443"
+      - "${SOCKET_IO_SRV_PORT}:6001"
+      - "${VUEJS_APP_SRV_PORT}:5000"
+      - "${XDEBUG_SRV_PORT}:2375"
+#    networks:
+#      - backend
+### Networks Setup ############################################
+
+#networks:
+#  backend:
+#    driver: "bridge"
+
+### Volumes Setup #############################################
+
+#volumes:
+#  workspace:
+#    driver: "local"
+#  percona:
+#    driver: "local"
+#  mssql:
+#    driver: "local"
+#  postgres:
+#    driver: "local"
+#  memcached:
+#    driver: "local"
+#  redis:
+#    driver: "local"
+#  neo4j:
+#    driver: "local"
+#  mariadb:
+#    driver: "local"
+#  mongo:
+#    driver: "local"
+#  minio:
+#    driver: "local"
+#  rethinkdb:
+#    driver: "local"
+#  phpmyadmin:
+#    driver: "local"
+#  adminer:
+#    driver: "local"
+#  aerospike:
+#    driver: "local"
+#  caddy:
+#    driver: "local"
+#  elasticsearch-data:
+#    driver: "local"
+#  elasticsearch-plugins:
+#    driver: "local"

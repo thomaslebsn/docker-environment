@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ssh-copy-id -p {ssh-mapped-port} -i {path-to-ssh-pub-key} admin@127.0.0.1

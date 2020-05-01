@@ -34,6 +34,7 @@ function init_a2(){
     a2dismod php7.1
     a2enmod php7.4
     a2enmod ssl
+    a2enmod headers
 }
 
 function print_to_screen(){

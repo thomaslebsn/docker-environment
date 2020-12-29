@@ -1,7 +1,5 @@
 FROM thomaslebsn/ubuntu-1604lts-2020:base
 
-MAINTAINER ThomasLe <thomaslebsn@gmail.com>
-
 # Remove Faillog and Lastlog to reduce the size of the final image.
 USER root
 RUN rm -rf /var/log/lastlog /var/log/faillog
@@ -68,6 +66,12 @@ RUN apt-get update \
     && n stable \
     && npm install -g svgo \
     && npm install -g pm2
+
+# Install NVM to manage Node version
+USER root
+RUN apt-get update \
+    && apt-get install build-essential libss1-dev \
+    && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
 
 # Install Yarn
 USER root

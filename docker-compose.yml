@@ -1,4 +1,4 @@
-version: '2'
+version: '3.9'
 
 services:
 ### Workspace Utilities Container ###########################
@@ -22,6 +22,7 @@ services:
       - "${SOCKET_IO_SRV_PORT}:6001"
       - "${VUEJS_APP_SRV_PORT}:5000"
       - "${XDEBUG_SRV_PORT}:2375"
+      - "${MYSQL_PORT}:3306"
 #    networks:
 #      - backend
 ### Networks Setup ############################################
@@ -32,9 +33,9 @@ services:
 
 ### Volumes Setup #############################################
 
-#volumes:
-#  workspace:
-#    driver: "local"
+volumes:
+  mysql_data:
+    driver: "local"
 #  percona:
 #    driver: "local"
 #  mssql:

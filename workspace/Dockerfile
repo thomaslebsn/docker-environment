@@ -63,14 +63,12 @@ USER root
 RUN apt-get update \
     && npm cache clean -f \
     && npm install -g n \
-    && n stable \
-    && npm install -g svgo \
-    && npm install -g pm2
+    && n stable
 
 # Install NVM to manage Node version
 USER root
 RUN apt-get update \
-    && apt-get install build-essential libss1-dev \
+    && apt-get install build-essential libssl-dev \
     && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
 
 # Install Yarn
